@@ -16,6 +16,16 @@ class _HomePageState extends State<HomePage> {
     "images/people/7.png",
     "images/people/8.png",
   ];
+  List<String> posts = [
+    "images/posts/post1.png",
+    "images/posts/post2.png",
+    "images/posts/post3.png",
+    "images/posts/post4.png",
+    "images/posts/post5.png",
+    "images/posts/post6.png",
+    "images/posts/post7.png",
+    "images/posts/post8.png",
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -94,12 +104,21 @@ class _HomePageState extends State<HomePage> {
                         Text("Profile Name"),
                         Spacer(),
                         IconButton(
-                            onPressed: () {}, icon: Icon(Icons.more_vert)
-                        ),
+                            onPressed: () {}, icon: Icon(Icons.more_vert)),
                       ],
                     ),
                     //Image Post
-                    // Image(image: image)
+                    Image(image: AssetImage(posts[index])),
+                    //Footer
+                    Row(
+                      children: [
+                        IconButton(onPressed: () {}, icon: Icon(Icons.favorite_border)),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.chat_bubble_outline)),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.label_outline)),
+                        Spacer(),
+                        IconButton(onPressed: () {}, icon: Icon(Icons.bookmark_border)),
+                      ],
+                    ),
                   ],
                 ),
               ),

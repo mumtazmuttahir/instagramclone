@@ -49,6 +49,7 @@ flutter:
     - images/Instagram_logo.png
     - images/red.png
     - images/people/
+    - images/posts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
