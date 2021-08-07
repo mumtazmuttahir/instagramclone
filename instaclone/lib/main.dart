@@ -38,7 +38,12 @@ class _MyHomePageState extends State<InstaHomePage> {
             //Home
             IconButton(
                 //This will trigger a feature
-                onPressed: () {},
+                onPressed: ()
+                {
+                  setState(() {
+                    current_page = 0;
+                  });
+                },
                 //Will show the first icon as home
                 //From left to right
                 icon: Icon(Icons.home,
@@ -49,7 +54,12 @@ class _MyHomePageState extends State<InstaHomePage> {
             //Search
             IconButton(
                 //This will trigger a feature
-                onPressed: () {},
+                onPressed: ()
+                {
+                  setState(() {
+                    current_page = 1;
+                  });
+                },
                 //Will show the first icon as home
                 //From left to right
                 icon:
@@ -62,7 +72,12 @@ class _MyHomePageState extends State<InstaHomePage> {
             //Video
             IconButton(
                 //This will trigger a feature
-                onPressed: () {},
+                onPressed: ()
+                {
+                  setState(() {
+                    current_page = 2;
+                  });
+                },
                 //Will show the first icon as home
                 //From left to right
                 icon: Icon(Icons.ondemand_video,
@@ -73,7 +88,12 @@ class _MyHomePageState extends State<InstaHomePage> {
             //Traver card
             IconButton(
                 //This will trigger a feature
-                onPressed: () {},
+                onPressed: ()
+                {
+                  setState(() {
+                    current_page = 3;
+                  });
+                },
                 //Will show the first icon as home
                 //From left to right
                 icon: Icon(Icons.card_travel,
@@ -84,7 +104,12 @@ class _MyHomePageState extends State<InstaHomePage> {
             //Personal Information
             IconButton(
                 //This will trigger a feature
-                onPressed: () {},
+                onPressed: ()
+                {
+                  setState(() {
+                    current_page = 4;
+                  });
+                },
                 //Will show the first icon as home
                 //From left to right
                 icon:
@@ -98,4 +123,10 @@ class _MyHomePageState extends State<InstaHomePage> {
       ),
     );
   }
+
+  // Widget bottom_navigation_bar (BuildContext _context) {
+  //   Widget build(_context) {
+  //     return BottomAppBar();
+  //   }
+  // }
 }
