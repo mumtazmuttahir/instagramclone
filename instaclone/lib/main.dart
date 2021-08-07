@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'Views/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +13,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Instagram Clone',
       theme: ThemeData(
+        iconTheme: IconThemeData(
+          color: Color.fromRGBO(40, 40, 40, 1),
+        ),
+        appBarTheme: AppBarTheme(
+          elevation: 1,
+          color: Colors.white,
+          iconTheme: IconThemeData(
+            color: Color.fromRGBO(40, 40, 40, 1),
+          ),
+        ),
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: InstaHomePage(),
     );
@@ -29,6 +41,8 @@ class _MyHomePageState extends State<InstaHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Define the body
+      body: HomePage(),
       //Adds the bottom Navigation Bar
       bottomNavigationBar: BottomAppBar(
         //Child will be a row widget
@@ -38,8 +52,7 @@ class _MyHomePageState extends State<InstaHomePage> {
             //Home
             IconButton(
                 //This will trigger a feature
-                onPressed: ()
-                {
+                onPressed: () {
                   setState(() {
                     current_page = 0;
                   });
@@ -54,26 +67,22 @@ class _MyHomePageState extends State<InstaHomePage> {
             //Search
             IconButton(
                 //This will trigger a feature
-                onPressed: ()
-                {
+                onPressed: () {
                   setState(() {
                     current_page = 1;
                   });
                 },
                 //Will show the first icon as home
                 //From left to right
-                icon:
-                    Icon(
-                        Icons.search,
-                        color: current_page == 1
-                            ? Color.fromRGBO(203, 73, 101, 1)
-                            : Color.fromRGBO(40, 40, 40, 1))),
+                icon: Icon(Icons.search,
+                    color: current_page == 1
+                        ? Color.fromRGBO(203, 73, 101, 1)
+                        : Color.fromRGBO(40, 40, 40, 1))),
             Spacer(),
             //Video
             IconButton(
                 //This will trigger a feature
-                onPressed: ()
-                {
+                onPressed: () {
                   setState(() {
                     current_page = 2;
                   });
@@ -88,8 +97,7 @@ class _MyHomePageState extends State<InstaHomePage> {
             //Traver card
             IconButton(
                 //This will trigger a feature
-                onPressed: ()
-                {
+                onPressed: () {
                   setState(() {
                     current_page = 3;
                   });
@@ -98,25 +106,23 @@ class _MyHomePageState extends State<InstaHomePage> {
                 //From left to right
                 icon: Icon(Icons.card_travel,
                     color: current_page == 3
-                    ? Color.fromRGBO(203, 73, 101, 1)
-                    : Color.fromRGBO(40, 40, 40, 1))),
+                        ? Color.fromRGBO(203, 73, 101, 1)
+                        : Color.fromRGBO(40, 40, 40, 1))),
             Spacer(),
             //Personal Information
             IconButton(
                 //This will trigger a feature
-                onPressed: ()
-                {
+                onPressed: () {
                   setState(() {
                     current_page = 4;
                   });
                 },
                 //Will show the first icon as home
                 //From left to right
-                icon:
-                    Icon(Icons.person,
-                        color: current_page == 4
-                            ? Color.fromRGBO(203, 73, 101, 1)
-                            : Color.fromRGBO(40, 40, 40, 1))),
+                icon: Icon(Icons.person,
+                    color: current_page == 4
+                        ? Color.fromRGBO(203, 73, 101, 1)
+                        : Color.fromRGBO(40, 40, 40, 1))),
             Spacer(),
           ],
         ),
