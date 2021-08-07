@@ -76,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                 8,
                 (index) => Column(
                   children: [
-                    //Child 1
+                    //Header Post
                     Row(
                       children: [
                         Container(
@@ -98,6 +98,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ],
                     ),
+                    //Image Post
+                    // Image(image: image)
                   ],
                 ),
               ),
