@@ -25,6 +25,7 @@ class InstaHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<InstaHomePage> {
+  int current_page = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,39 +41,57 @@ class _MyHomePageState extends State<InstaHomePage> {
                 onPressed: () {},
                 //Will show the first icon as home
                 //From left to right
-                icon: Icon(Icons.home)),
+                icon: Icon(Icons.home,
+                    color: current_page == 0
+                        ? Color.fromRGBO(203, 73, 101, 1)
+                        : Color.fromRGBO(40, 40, 40, 1))),
             Spacer(),
             //Search
             IconButton(
-              //This will trigger a feature
+                //This will trigger a feature
                 onPressed: () {},
                 //Will show the first icon as home
                 //From left to right
-                icon: Icon(Icons.search)),
+                icon:
+                    Icon(
+                        Icons.search,
+                        color: current_page == 1
+                            ? Color.fromRGBO(203, 73, 101, 1)
+                            : Color.fromRGBO(40, 40, 40, 1))),
             Spacer(),
             //Video
             IconButton(
-              //This will trigger a feature
+                //This will trigger a feature
                 onPressed: () {},
                 //Will show the first icon as home
                 //From left to right
-                icon: Icon(Icons.ondemand_video)),
+                icon: Icon(Icons.ondemand_video,
+                    color: current_page == 2
+                        ? Color.fromRGBO(203, 73, 101, 1)
+                        : Color.fromRGBO(40, 40, 40, 1))),
             Spacer(),
             //Traver card
             IconButton(
-              //This will trigger a feature
+                //This will trigger a feature
                 onPressed: () {},
                 //Will show the first icon as home
                 //From left to right
-                icon: Icon(Icons.card_travel)),
+                icon: Icon(Icons.card_travel,
+                    color: current_page == 3
+                    ? Color.fromRGBO(203, 73, 101, 1)
+                    : Color.fromRGBO(40, 40, 40, 1))),
             Spacer(),
             //Personal Information
             IconButton(
-              //This will trigger a feature
+                //This will trigger a feature
                 onPressed: () {},
                 //Will show the first icon as home
                 //From left to right
-                icon: Icon(Icons.person)),
+                icon:
+                    Icon(Icons.person,
+                        color: current_page == 4
+                            ? Color.fromRGBO(203, 73, 101, 1)
+                            : Color.fromRGBO(40, 40, 40, 1))),
             Spacer(),
           ],
         ),
