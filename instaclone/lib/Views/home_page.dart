@@ -26,6 +26,9 @@ class _HomePageState extends State<HomePage> {
     "images/posts/post7.png",
     "images/posts/post8.png",
   ];
+  Future<void> onRefresh () async {
+    await Future.delayed(Duration(seconds: 1));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,89 +44,148 @@ class _HomePageState extends State<HomePage> {
           IconButton(onPressed: () {}, icon: Icon(Icons.chat_bubble_outline)),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            //Story
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: List.generate(
-                  8,
-                  (index) => Container(
-                    padding: EdgeInsets.all(10),
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          radius: 35,
-                          backgroundImage: AssetImage("images/red.png"),
-                          child: CircleAvatar(
-                            radius: 32,
-                            backgroundImage:
-                                AssetImage(profile_pictures[index]),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "Profile Name",
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            //Rest
-            Divider(),
-            Column(
-              children: List.generate(
-                8,
-                (index) => Column(
-                  children: [
-                    //Header Post
-                    Row(
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          child: CircleAvatar(
-                            radius: 14,
+      body: RefreshIndicator(
+        onRefresh: onRefresh,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              //Story
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(
+                    8,
+                    (index) => Container(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            radius: 35,
                             backgroundImage: AssetImage("images/red.png"),
                             child: CircleAvatar(
-                              radius: 12,
+                              radius: 32,
                               backgroundImage:
                                   AssetImage(profile_pictures[index]),
                             ),
                           ),
-                        ),
-                        Text("Profile Name"),
-                        Spacer(),
-                        IconButton(
-                            onPressed: () {}, icon: Icon(Icons.more_vert)),
-                      ],
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Profile Name",
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.black,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                    //Image Post
-                    Image(image: AssetImage(posts[index])),
-                    //Footer
-                    Row(
-                      children: [
-                        IconButton(onPressed: () {}, icon: Icon(Icons.favorite_border)),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.chat_bubble_outline)),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.label_outline)),
-                        Spacer(),
-                        IconButton(onPressed: () {}, icon: Icon(Icons.bookmark_border)),
-                      ],
-                    ),
-                  ],
+                  ),
                 ),
               ),
-            ),
-          ],
+              //Rest
+              Divider(),
+              Column(
+                children: List.generate(
+                  8,
+                  (index) => Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      //Header Post
+                      Row(
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            child: CircleAvatar(
+                              radius: 14,
+                              backgroundImage: AssetImage("images/red.png"),
+                              child: CircleAvatar(
+                                radius: 12,
+                                backgroundImage:
+                                    AssetImage(profile_pictures[index]),
+                              ),
+                            ),
+                          ),
+                          Text("Profile Name"),
+                          Spacer(),
+                          IconButton(
+                              onPressed: () {}, icon: Icon(Icons.more_vert)),
+                        ],
+                      ),
+                      //Image Post
+                      Image(image: AssetImage(posts[index])),
+                      //Footer
+                      Row(
+                        children: [
+                          IconButton(onPressed: () {}, icon: Icon(Icons.favorite_border)),
+                          IconButton(onPressed: () {}, icon: Icon(Icons.chat_bubble_outline)),
+                          IconButton(onPressed: () {}, icon: Icon(Icons.label_outline)),
+                          Spacer(),
+                          IconButton(onPressed: () {}, icon: Icon(Icons.bookmark_border)),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(15),
+                        child: Column (
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            RichText(
+                              text: TextSpan(
+                                style: TextStyle(color: Colors.black),
+                                children: [
+                                  TextSpan(
+                                    text: "Liked By ",
+                                  ),
+                                  TextSpan(
+                                    text: "Profile Name",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                    )
+                                  ),
+                                  TextSpan(
+                                      text: ", and ",
+                                  ),
+                                  TextSpan(
+                                      text: "others",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                ],
+                              ),
+                            ),
+                            RichText(
+                              text: TextSpan(
+                                style: TextStyle(color: Colors.black),
+                                children: [
+                                  TextSpan(
+                                    text: "Profile Name ",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      )
+                                  ),
+                                  TextSpan(
+                                    text: "This is an awesome Pic ",
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Text(
+                              "View all 12 comments",
+                              style: TextStyle(
+                                color: Colors.black38,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
