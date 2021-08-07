@@ -27,6 +27,56 @@ class InstaHomePage extends StatefulWidget {
 class _MyHomePageState extends State<InstaHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      //Adds the bottom Navigation Bar
+      bottomNavigationBar: BottomAppBar(
+        //Child will be a row widget
+        child: Row(
+          children: [
+            Spacer(),
+            //Home
+            IconButton(
+                //This will trigger a feature
+                onPressed: () {},
+                //Will show the first icon as home
+                //From left to right
+                icon: Icon(Icons.home)),
+            Spacer(),
+            //Search
+            IconButton(
+              //This will trigger a feature
+                onPressed: () {},
+                //Will show the first icon as home
+                //From left to right
+                icon: Icon(Icons.search)),
+            Spacer(),
+            //Video
+            IconButton(
+              //This will trigger a feature
+                onPressed: () {},
+                //Will show the first icon as home
+                //From left to right
+                icon: Icon(Icons.ondemand_video)),
+            Spacer(),
+            //Traver card
+            IconButton(
+              //This will trigger a feature
+                onPressed: () {},
+                //Will show the first icon as home
+                //From left to right
+                icon: Icon(Icons.card_travel)),
+            Spacer(),
+            //Personal Information
+            IconButton(
+              //This will trigger a feature
+                onPressed: () {},
+                //Will show the first icon as home
+                //From left to right
+                icon: Icon(Icons.person)),
+            Spacer(),
+          ],
+        ),
+      ),
+    );
   }
 }
