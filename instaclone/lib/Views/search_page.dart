@@ -41,7 +41,7 @@ class SearchPage extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: List.generate(
-                  10,
+                  buttons.length,
                   (index) => Container(
                     padding: EdgeInsets.symmetric(horizontal: 5),
                     child: OutlineButton(
