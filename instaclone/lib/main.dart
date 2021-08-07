@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'Views/home_page.dart';
+import 'Views/search_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,7 +43,7 @@ class _MyHomePageState extends State<InstaHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       //Define the body
-      body: HomePage(),
+      body: current_page == 1 ? SearchPage() : HomePage(),
       //Adds the bottom Navigation Bar
       bottomNavigationBar: BottomAppBar(
         //Child will be a row widget
